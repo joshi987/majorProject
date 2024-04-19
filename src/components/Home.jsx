@@ -1,28 +1,30 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import Typewriter from "typewriter-effect";
 function Home() {
   return (
-    <nav className="bg-gray-800 p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="flex items-center">
-          <span className="text-white text-lg font-semibold">Your Logo</span>
-        </div>
-        <div className="flex items-center">
-          <a href="#" className="text-white mr-4">Home</a>
-          <a href="#" className="text-white mr-4">Check My Answer</a>
-        </div>
-        <div className="flex items-center">
-        <Link to='student-login'>
-
-          <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded mr-4">Student Login</button>
-        </Link>
-        <Link to="teacher-login">
-          <button className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded">Teacher Login</button>
-
-        </Link>
-        </div>
+    <div className="container mx-auto flex flex-col justify-center items-center h-full">
+    <div className="text-center">
+      <h1 className="text-5xl text-green-500 font-semibold pb-12">
+        CheckMyAnswer
+      </h1>
+      <div className="container mx-auto mt-8 px-4 w-2/3 h-auto shadow-lg">
+        <Typewriter
+          onInit={(typewriter) => {
+            typewriter
+              .typeString("Hi friends ")
+              .pauseFor(1000)
+              .deleteAll()
+              .typeString(
+                "I can help evaluate subjective answers based on certain criteria and guidelines provided to me. However, it is important to note that subjective answers can be influenced by various factors such as personal biases, emotions, and cultural background, which may not be fully understood by me. Therefore, while I can provide a level of objective analysis, I cannot replace the value of human judgment and contextual understanding in evaluating subjective answers."
+              )
+              .start();
+          }} 
+        />
       </div>
-    </nav>
+    </div>
+  </div>
+  
   );
 }
 
